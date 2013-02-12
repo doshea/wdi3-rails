@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>StockMovie</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <header class="navbar navbar-fixed-top navbar-inverse">
+    <nav class="navbar-inner">
+      <div class="container">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        <a class="brand" href="/">MOVIE&STOCK</a>
+        <div class="nav-collapse">
+          <ul class="nav">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/faq">FAQ</a></li>
+            <li class='right'>
+              <form class="navbar-search pull-left" method="post" action="/search_stock">
+              <input type="text" class="search-query" placeholder="Stock" name="symbol">
+              <i class="icon-search icon-white"></i>
+            </form>
+          </li>
+          <li class='right'>
+            <form class="navbar-search pull-left" method="post" action="/search_movie">
+              <input type="text" class="search-query" placeholder="Movie" name="title">
+              <i class="icon-search icon-white"></i>
+            </form>
+          </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="container">
+    <%= yield %>
+  </div>
+</body>
+</html>
